@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+void towerofhanoi(int n,char fromRod,char toRod,char auxRod){
+    if(n == 0){
+        return ;
+
+    }
+    towerofhanoi(n-1,fromRod,auxRod,toRod);
+    cout << "Disk " << n << " moved from " << fromRod <<" to "<< toRod <<"\n";
+    towerofhanoi(n-1,auxRod,toRod,fromRod);
+}
+int main(){
+    int n = 4;
+    towerofhanoi(n,'A','C','B');
+    return 0;
+}
